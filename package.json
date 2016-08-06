@@ -1,0 +1,38 @@
+{
+  "name": "rps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./backend/app.js",
+    "test": "jasmine",
+    "nodemon": "node ./node_modules/nodemon/bin/nodemon.js --expose-gc  ./backend/app.js",
+    "buildjs": "browserify --entry frontend/app.js --outfile public/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "body-parser": "^1.15.1",
+    "browserify": "^13.0.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "lodash.assign": "^4.0.9",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.2",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
+}
