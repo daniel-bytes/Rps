@@ -85,6 +85,10 @@ function calculateMove(gameObj, playerObj, randomThreshold = .7) {
         }
     }
 
+    if (!results.length) {
+        throw new Error('No moves for player');
+    }
+
     results.sort((lhs, rhs) => {
         const lhsValue = (lhs.endpointType + lhs.totalMoves);
         const rhsValue = (rhs.endpointType + rhs.totalMoves);
@@ -92,11 +96,14 @@ function calculateMove(gameObj, playerObj, randomThreshold = .7) {
         return rhsValue - lhsValue; // bigger lhsValue actually sorts first
     });
 
-    if (Math.random() <= randomThreshold) {
-        return results[0];
+    let idx = 0;
+
+    if (results.length > 1 && Math.random() > randomThreshold) {
+        // we are totally random now
+        idx = Math.floor(Math.random() * results.length);
     }
-    
-    return results[ Math.floor(Math.random() * results.length) ];
+
+    return results[idx];
 }
 
 module.exports = {
