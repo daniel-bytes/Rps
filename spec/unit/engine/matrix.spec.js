@@ -2,17 +2,21 @@
 
 describe('matrix', () => {
     let matrix = require('../../../backend/engine/matrix');
+    let matrixElement = require('../../../backend/engine/matrix-element');
 
     it('can be created', () => {
         const value = matrix.create(2, 2);
         expect(value).not.toBeNull();
-        expect(value.get(0, 0)).toBeNull();
+        expect(value.get(0, 0)).not.toBeTruthy();
     });
 
-    it('can set values', () => {
-        const value = matrix.create(2, 2);
-        value.set(1, 1, 2);
-        expect(value.get(1, 1)).toBe(2);
+    it('can be created with data', () => {
+        const arr = [ matrixElement.create(0, 0, 'a') ];
+        const value = matrix.create(2, 2, arr);
+        expect(value).not.toBeNull();
+        expect(value.get(0, 0)).not.toBeNull();
+        expect(value.get(0, 1)).not.toBeTruthy();
+        expect(value.get(1, 0)).not.toBeTruthy();
     });
 
     it('can report its row size', () => {
@@ -23,66 +27,6 @@ describe('matrix', () => {
     it('can report its column size', () => {
         const value = matrix.create(2, 3);
         expect(value.cols()).toBe(3);
-    });
-
-    it('throws when given a non-number row index when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get('foo', 0) ).toThrow();
-    });
-
-    it('throws when given a negative row index when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get(-1, 0) ).toThrow();
-    });
-
-    it('throws when given a row index that is too high when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get(1, 0) ).toThrow();
-    });
-
-    it('throws when given a non-number col index when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get(0, 'foo') ).toThrow();
-    });
-
-    it('throws when given a negative col index when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get(0, -1) ).toThrow();
-    });
-
-    it('throws when given a col index that is too high when getting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.get(0, 1) ).toThrow();
-    });
-
-    it('throws when given a non-number row index when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set('foo', 0, null) ).toThrow();
-    });
-
-    it('throws when given a negative row index when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set(-1, 0, null) ).toThrow();
-    });
-
-    it('throws when given a row index that is too high when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set(1, 0, null) ).toThrow();
-    });
-
-    it('throws when given a non-number col index when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set(0, 'foo', null) ).toThrow();
-    });
-
-    it('throws when given a negative col index when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set(0, -1, null) ).toThrow();
-    });
-
-    it('throws when given a col index that is too high when setting', () => {
-        const value = matrix.create(1, 1);
-        expect( () => value.set(0, 1, null) ).toThrow();
     });
 
     it('throws when given a non-number value of rows', () => {

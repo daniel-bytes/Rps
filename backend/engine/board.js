@@ -3,27 +3,33 @@
 const matrix = require('./matrix');
 const tokenTypes = require('./token-types');
 
-function createBoard(rows, cols) {
-    const board = matrix.create(rows, cols);
+function createBoard(rows, cols, tokens) {
+    let boardMatrix = matrix.create(rows, cols, tokens);
 
     return {
-        setToken: function(x, y, token) {
-            board.set(x, y, token);
+        get: function(x, y) {
+            return boardMatrix.get(x, y);
         },
 
-        flatten: function() {
-            return board.clone().reduce((a, b) => a.concat(b), []);
+        tokens: function() {
+            return boardMatrix.elements();
         },
 
-        print: function() {
-            board.print();
+        without: function(matrixElement) {
+            boardMatrix = boardMatrix.without(matrixElement);
+            return this;
         },
 
         validMovesFrom: function(x, y) {
-            //console.log(`validMovesFrom {${x}:${y}}`)
-            const token = board.get(x, y);
-            
-            if (!token || !token.isMovable()) {
+            let matrixElement = boardMatrix.get(x, y);
+
+            if (!matrixElement || !matrixElement.value) {
+                return [];
+            }
+
+            let token = matrixElement.value;
+
+            if (!token.isMovable()) {
                 return [];
             }
             
@@ -37,34 +43,27 @@ function createBoard(rows, cols) {
             var validMoves = allMoves.filter(pt => {
                 const x1 = pt.x;
                 const y1 = pt.y;
-                //console.log(`Filter {${x1}:${y1}}`);
 
-                if (x1 < 0 || x1 >= board.cols()) {
-                    //console.log('Invalid X')
+                if (x1 < 0 || x1 >= boardMatrix.cols()) {
                     return false;
                 }
-                if (y1 < 0 || y1 >= board.rows()) {
-                    //console.log('Invalid Y')
+                if (y1 < 0 || y1 >= boardMatrix.rows()) {
                     return false;
                 }
 
-                const otherToken = board.get(x1, y1);
+                const otherToken = boardMatrix.get(x1, y1);
 
-                if (!otherToken) {
-                    //console.log('OK - no token at location')
+                if (!otherToken || !otherToken.value) {
                     return true;
                 }
 
-                if (otherToken.player().is(player)) {
-                    //console.log('Same player')
+                if (otherToken.value.player().is(player)) {
                     return false;
                 }
                 
-                //console.log('OK - token is other player token')
                 return true;
             });
 
-            //console.log(validMoves)
             return validMoves;
         }
     }

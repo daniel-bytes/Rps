@@ -7,8 +7,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var pageRoutes = require('./routes/pages');
-var apiRoutes = require('./routes/api');
+var routes = require('./routes');
 var socketRoutes = require('./routes/socket');
 
 // uncomment after placing your favicon in /public
@@ -19,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/', pageRoutes);
-app.use('/api', apiRoutes);
+app.use('/', routes);
 socketRoutes(io);
 
 var httpPort = process.env.PORT || 3000;
