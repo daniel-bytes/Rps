@@ -8,11 +8,13 @@ const endpointTypes = {
     enemy: 10
 };
 
-function calculateMove(gameObj, playerObj, randomThreshold = .7) {
+function calculateMove(gameObj, playerObj, randomThreshold) {
     // divide tokens
     const tokens = gameObj.tokens();
     const playerTokens = [];
     const allTokens = {};
+
+    randomThreshold = randomThreshold ||  .7;
 
     for (let token of tokens) {
         if (token.value.player().is(playerObj)) {

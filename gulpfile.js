@@ -7,53 +7,78 @@ var watchify = require('watchify');
 var babelify = require('babelify');
 var notify = require('gulp-notify');
 var concat = require('gulp-concat');
+var assign = require('lodash.assign');
 var fs = require("fs");
+var b = null;
+const jsroot = "./frontend/js/app.js";
+const jsoutput = "./public/app.js";
+const cssroot = './frontend/css/*.css';
 
-// see https://gist.github.com/wesbos/52b8fe7e972356e85b43
-function handleErrors() {
-	var args = Array.prototype.slice.call(arguments);
-	notify.onError({
-        title: 'Compile Error',
-        message: '<%= error.message %>'
-    }).apply(this, args);
-    
-    this.emit('end'); // Keep gulp from hanging on this task
+function initBrowserify(watch) {
+    let options = {
+        entries: [jsroot],
+        cache: {},
+        packageCache: {}
+    };
+
+    if (watch) {
+        options.plugin = [watchify];
+    }
+
+    b = browserify(options);
+
+    if (watch) {
+        b.on('update', bundleJs);
+    }
+
+    b.on('log', function(data) {
+        console.log(`[browserify]: ${data}`);
+        
+        notify({
+            title: 'Compile Complete!',
+            message: data
+        });
+    });
 }
 
-function bundleJs(watch) {
-    const root = "./frontend/js/app.js";
-    const output = "./public/app.js";
-    
-    if (watch) {
-        browserify = browserify({
-            entries: [root],
-            cache: {},
-            packageCache: {},
-            plugin: [watchify]
+function bundleJs() {
+    if (!b) {
+        throw new Error("Missing call to initBrowserify");
+    }
+
+    console.log('[gulp] Starting bundleJs');
+
+    b.transform("babelify", {presets: ["es2015", "react"]})
+     .bundle()
+     .on('error', function(err){
+        // print the error (can replace with gulp-util)
+        console.log(`[browserify] Error: ${err.message}`);
+        notify({
+            'title': 'Compile Error',
+            'message': err.message
         });
-    }
-    else {
-        browserify = browserify(root); 
-    }
-  
-	browserify
-        .transform("babelify", {presets: ["es2015", "react"]})
-        .bundle()
-        .pipe(fs.createWriteStream(output));
+        // end this stream
+        this.emit('end');
+     })
+     .pipe(fs.createWriteStream(jsoutput));
 }
 
 function bundleCss() {
-      gulp.src('./frontend/css/*.css')
-          .pipe(concat('app.css'))
-          .pipe(gulp.dest('public/'));
+    console.log('[gulp] Starting bundleCss');
+
+     gulp.src(cssroot)
+         .pipe(concat('app.css'))
+         .pipe(gulp.dest('public/'));
 }
 
 gulp.task('js', function() {
-    return bundleJs(false);
+    initBrowserify(false);
+    return bundleJs();
 });
 
 gulp.task('js-watch', function() {
-    return bundleJs(true);
+    initBrowserify(true);
+    return bundleJs();
 });
 
 gulp.task('css', function () {
@@ -61,7 +86,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('css-watch', function () {
-  gulp.watch('./frontend/css/*.css', bundleCss);
+  //gulp.watch(cssroot, bundleCss);
   bundleCss();
 });
 
