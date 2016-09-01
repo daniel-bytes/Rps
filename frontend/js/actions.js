@@ -3,7 +3,16 @@
 export const ActionTypes = {
     SELECT_TOKEN: 'SELECT_TOKEN',
     RELEASE_TOKEN: 'RELEASE_TOKEN',
-    CLEAR_SELECTION: 'CLEAR_SELECTION'
+    CLEAR_SELECTION: 'CLEAR_SELECTION',
+    SERVER_INITIALIZE: 'server/INITIALIZE',
+    CLIENT_INITIALIZE: 'client/INITIALIZE'
+}
+
+export const initializeBoard = (gameid, playerid) => {
+    return {
+        type: ActionTypes.SERVER_INITIALIZE,
+        data: { gameid, playerid }
+    }
 }
 
 export const selectToken = (coordinates) => {

@@ -1,8 +1,21 @@
 'use strict';
 
 import { ActionTypes } from './actions';
-import initialState from './dummy-data';
-//const initialState = { };
+//import initialState from './dummy-data';
+const initialState = {
+    parameters: {
+        rows: 1,
+        cols: 1
+    },
+    currentPlayer: {
+        player: {},
+        tokens: []
+    },
+    otherPlayer: {
+        player: {},
+        tokens: []
+    }
+};
 
 function handleSelectToken(state, coordinates) {
     const selectedToken = state.currentPlayer.tokens.filter(t => t.x === coordinates.x && t.y === coordinates.y);
@@ -24,6 +37,12 @@ function handleClearSelection(state) {
     });
 }
 
+function handleClientInitialize(state, game) {
+    game.selected = null;
+    game.available = [];
+    return Object.assign({}, state, game);
+}
+
 export default function rpsApp(state, action) {
     if (typeof state === 'undefined') {
         return initialState;
@@ -38,6 +57,9 @@ export default function rpsApp(state, action) {
 
         case ActionTypes.CLEAR_SELECTION:
             return handleClearSelection(state);
+
+        case ActionTypes.CLIENT_INITIALIZE:
+            return handleClientInitialize(state, action.data);
 
         default:
             return state;
