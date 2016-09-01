@@ -1,6 +1,6 @@
 'use strict';
 
-export function parseGameIdFromUrl(document) {
+function parseGameIdFromUrl(document) {
     if (document && document.location && document.location.pathname) {
         let parts = document.location.pathname.split('/');
 
@@ -12,6 +12,17 @@ export function parseGameIdFromUrl(document) {
     }
     
     return "";
+}
+
+
+export function parseGameProps(document) {
+    const gameid = parseGameIdFromUrl(document);
+    const cookies = parseCookies(document);
+
+    return {
+        gameid: gameid || cookies.gameid,
+        playerid: cookies.playerid
+    }
 }
 
 export function parseCookies(document) {

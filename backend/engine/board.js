@@ -20,6 +20,11 @@ function createBoard(rows, cols, tokens) {
             return this;
         },
 
+        move: function(x, y, toX, toY) {
+            boardMatrix = boardMatrix.move(x, y, toX, toY);
+            return this;
+        },
+
         validMovesFrom: function(x, y) {
             let matrixElement = boardMatrix.get(x, y);
 

@@ -5,14 +5,22 @@ import Token from './Token'
 
 export default class AppCanvas extends React.Component {
     tokenSelected(coordinates) {
-        if (this.props.isPlayerTurn) {
+        if (this.props.gameInProgress &&
+            this.props.isPlayerTurn) 
+        {
             this.props.onTokenSelected(coordinates);
         }
     }
 
     tokenReleased(coordinates) {
-        if (this.props.isPlayerTurn) {
-            this.props.onTokenReleased(coordinates);
+        if (this.props.gameInProgress &&
+            this.props.isPlayerTurn && 
+            this.props.selected &&
+            this.props.available &&
+            this.props.available.length &&
+            (this.props.selected.x !== coordinates.x || this.props.selected.y !== coordinates.y)) 
+        {
+            this.props.onTokenMoved(this.props.gameid, this.props.playerid, this.props.selected, coordinates);
         }
     }
 
@@ -21,7 +29,12 @@ export default class AppCanvas extends React.Component {
     }
 
     componentDidMount() {
-        window.addEventListener('mouseup', this.windowMouseUp.bind(this));
+        if (this.props.gameInProgress) {
+            window.addEventListener('mouseup', this.windowMouseUp.bind(this));
+        }
+        else {
+            alert('Game Over!  ' + (this.props.parameters.status === 2 ? "You Win!" : "You Lost!"));
+        }
     }
 
     componentWillUnmount() {

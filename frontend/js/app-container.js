@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
 import AppCanvas from './app-canvas'
-import { selectToken, releaseToken, clearSelection } from './actions';
+import { selectToken, moveToken, clearSelection } from './actions';
+
+const GAMESTATUS_INPROGRESS = 1;
 
 const mapStateToProps = (state, ownProps) => {
     return Object.assign({}, state, {
@@ -11,22 +13,29 @@ const mapStateToProps = (state, ownProps) => {
         tokenSpacing: 10,
         rows: state.parameters.rows,
         cols: state.parameters.cols,
-        isPlayerTurn: state.parameters.currentPlayer === 0
+        isPlayerTurn: state.parameters.currentPlayer === 0,
+        gameInProgress: state.parameters.status === GAMESTATUS_INPROGRESS
     });
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onTokenSelected: (coordinates) => {
-            dispatch(selectToken(coordinates));
+            dispatch(
+                selectToken(coordinates)
+            );
         },
 
-        onTokenReleased: (coordinates) => {
-            dispatch(releaseToken(coordinates));
+        onTokenMoved: (gameid, playerid, from, to) => {
+            dispatch(
+                moveToken(gameid, playerid, from, to)
+            );
         },
 
         onSelectionCleared: () => {
-            dispatch(clearSelection());
+            dispatch(
+                clearSelection()
+            );
         }
     }
 }

@@ -44,6 +44,10 @@ function createGame(parameters, playersWithTokens) {
 
         tokens: () => gameBoard.tokens(),
 
+        swapCurrentPlayer: function() {
+            parameters.currentPlayer = (parameters.currentPlayer + 1) % 2;
+        },
+
         isPlayerTokenAt: function(playerId, position) {
             const result = gameBoard.tokens().filter(t => t.x === position.x &&
                                                           t.y === position.y &&
@@ -109,6 +113,7 @@ function createGame(parameters, playersWithTokens) {
             const rhsToken = gameBoard.get(to.x, to.y);
 
             if (!rhsToken) {
+                gameBoard = gameBoard.move(from.x, from.y, to.x, to.y);
                 return true;
             }
 
@@ -122,6 +127,7 @@ function createGame(parameters, playersWithTokens) {
                     break;
                 case tokenRuleResults.rhsLoses:
                     gameBoard = gameBoard.without(rhsElement);
+                    gameBoard = gameBoard.move(from.x, from.y, to.x, to.y);
                     break;
                 case tokenRuleResults.bothLose:
                     gameBoard = gameBoard.without(lhsElement).without(rhsElement);

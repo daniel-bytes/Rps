@@ -22,7 +22,7 @@ function transformToUiRepresentation(gameObj, playerObj) {
     };
 
     const currentPlayer = [result.player1, result.player2].filter(p => !p.player.isComputer && 
-                                                                        p.player.id === playerObj.id());
+                                                                        p.player.id=== playerObj.id());
 
     if (!currentPlayer.length) {
         throw new Error(`Failed to locate player with id ${playerObj.id()} in game`);
@@ -115,9 +115,14 @@ function movePlayer(gameId, playerId, from, to) {
             throw new Error(`Invalid move, token at ${from.x}:${from.y} does not belong to player ${playerId}`);
         }
 
+        console.log(`gameid ${gameId}: player move from ${from.x}:${from.y} to ${to.x}:${to.y}`)
         gameObj.move(from, to);
 
-        return transformToUiRepresentation(gameObj, playerObjs[0]);
+        gameObj.swapCurrentPlayer();
+
+        return repo.store(gameObj).then(() => {
+            return transformToUiRepresentation(gameObj, playerObjs[0]);
+        });
     });
 }
 
@@ -128,20 +133,26 @@ function moveComputer(gameId, playerId) {
         }
 
         const playerObjs = gameObj.players().filter(p => p.id() === playerId);
+        const computerPlayerObjs = gameObj.players().filter(p => p.id() !== playerId && p.isComputer());
 
         if (playerObjs.length !== 1) {
             throw new Error(`Invalid player id ${playerId}`);
         }
 
-        if (!playerObjs[0].isComputer()) {
-            throw new Error(`Player with id ${playerId} is not a computer player`);
+        if (computerPlayerObjs.length !== 1) {
+            throw new Error(`Invalid gameid ${gameId}, other player is not computer`);
         }
 
-        const move = gameAi.calculate(gameObj, playerObjs[0]);
+        const move = gameAi.calculate(gameObj, computerPlayerObjs[0]);
 
+        console.log(`gameid ${gameId}: computer move from ${move.from.x}:${move.from.y} to ${move.to.x}:${move.to.y}`)
         gameObj.move(move.from, move.to);
 
-        return transformToUiRepresentation(gameObj, playerObjs[0]);
+        gameObj.swapCurrentPlayer();
+
+        return repo.store(gameObj).then(() => {
+            return transformToUiRepresentation(gameObj, playerObjs[0]);
+        });
     });
 }
 

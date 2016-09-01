@@ -80,6 +80,7 @@ function calculateMove(gameObj, playerObj, randomThreshold) {
             while(true);
 
             results.push({
+                token,
                 move,
                 totalMoves,
                 endpointType
@@ -105,7 +106,12 @@ function calculateMove(gameObj, playerObj, randomThreshold) {
         idx = Math.floor(Math.random() * results.length);
     }
 
-    return results[idx];
+    const result = results[idx];
+
+    return {
+        from: { x: result.token.x, y: result.token.y },
+        to: { x: result.move.x, y: result.move.y }
+    };
 }
 
 module.exports = {

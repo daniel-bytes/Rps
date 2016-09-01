@@ -139,11 +139,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var ActionTypes = exports.ActionTypes = {
-    SELECT_TOKEN: 'SELECT_TOKEN',
-    RELEASE_TOKEN: 'RELEASE_TOKEN',
-    CLEAR_SELECTION: 'CLEAR_SELECTION',
+    UI_SELECT_TOKEN: 'ui/SELECT_TOKEN',
+    UI_CLEAR_SELECTION: 'ui/CLEAR_SELECTION',
     SERVER_INITIALIZE: 'server/INITIALIZE',
-    CLIENT_INITIALIZE: 'client/INITIALIZE'
+    SERVER_MOVE_TOKEN: 'server/MOVE_TOKEN',
+    CLIENT_UPDATE_BOARD: 'client/UPDATE_BOARD'
 };
 
 var initializeBoard = exports.initializeBoard = function initializeBoard(gameid, playerid) {
@@ -153,34 +153,92 @@ var initializeBoard = exports.initializeBoard = function initializeBoard(gameid,
     };
 };
 
-var selectToken = exports.selectToken = function selectToken(coordinates) {
+var moveToken = exports.moveToken = function moveToken(gameid, playerid, from, to) {
     return {
-        type: ActionTypes.SELECT_TOKEN,
-        coordinates: coordinates
+        type: ActionTypes.SERVER_MOVE_TOKEN,
+        data: { gameid: gameid, playerid: playerid, from: from, to: to }
     };
 };
 
-var releaseToken = exports.releaseToken = function releaseToken(coordinates) {
+var selectToken = exports.selectToken = function selectToken(coordinates) {
     return {
-        type: ActionTypes.RELEASE_TOKEN,
+        type: ActionTypes.UI_SELECT_TOKEN,
         coordinates: coordinates
     };
 };
 
 var clearSelection = exports.clearSelection = function clearSelection() {
     return {
-        type: ActionTypes.CLEAR_SELECTION
+        type: ActionTypes.UI_CLEAR_SELECTION
     };
 };
 
 },{}],3:[function(require,module,exports){
 'use strict';
 
+var _typeof9 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+var _typeof8 = typeof Symbol === "function" && _typeof9(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof9(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof9(obj);
+};
+
+var _typeof7 = typeof Symbol === "function" && _typeof8(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof8(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof8(obj);
+};
+
+var _typeof6 = typeof Symbol === "function" && _typeof7(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof7(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof7(obj);
+};
+
+var _typeof5 = typeof Symbol === "function" && _typeof6(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof6(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof6(obj);
+};
+
+var _typeof4 = typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof5(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof5(obj);
+};
+
+var _typeof3 = typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof4(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof4(obj);
+};
+
+var _typeof2 = typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof3(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof3(obj);
+};
+
+var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
+};
+
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
+}();
 
 var _react = require('react');
 
@@ -190,13 +248,27 @@ var _Token = require('./Token');
 
 var _Token2 = _interopRequireDefault(_Token);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
 
 var AppCanvas = function (_React$Component) {
     _inherits(AppCanvas, _React$Component);
@@ -210,15 +282,15 @@ var AppCanvas = function (_React$Component) {
     _createClass(AppCanvas, [{
         key: 'tokenSelected',
         value: function tokenSelected(coordinates) {
-            if (this.props.isPlayerTurn) {
+            if (this.props.gameInProgress && this.props.isPlayerTurn) {
                 this.props.onTokenSelected(coordinates);
             }
         }
     }, {
         key: 'tokenReleased',
         value: function tokenReleased(coordinates) {
-            if (this.props.isPlayerTurn) {
-                this.props.onTokenReleased(coordinates);
+            if (this.props.gameInProgress && this.props.isPlayerTurn && this.props.selected && this.props.available && this.props.available.length && (this.props.selected.x !== coordinates.x || this.props.selected.y !== coordinates.y)) {
+                this.props.onTokenMoved(this.props.gameid, this.props.playerid, this.props.selected, coordinates);
             }
         }
     }, {
@@ -229,7 +301,11 @@ var AppCanvas = function (_React$Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            window.addEventListener('mouseup', this.windowMouseUp.bind(this));
+            if (this.props.gameInProgress) {
+                window.addEventListener('mouseup', this.windowMouseUp.bind(this));
+            } else {
+                alert('Game Over!  ' + (this.props.parameters.status === 2 ? "You Win!" : "You Lost!"));
+            }
         }
     }, {
         key: 'componentWillUnmount',
@@ -318,13 +394,9 @@ var AppCanvas = function (_React$Component) {
                     onTokenReleased: _this2.tokenReleased.bind(_this2) });
             });
 
-            return _react2.default.createElement(
-                'svg',
-                { id: 'canvas',
-                    width: this.props.width,
-                    height: this.props.height },
-                tokens
-            );
+            return _react2.default.createElement('svg', { id: 'canvas',
+                width: this.props.width,
+                height: this.props.height }, tokens);
         }
     }]);
 
@@ -349,9 +421,9 @@ var _appCanvas2 = _interopRequireDefault(_appCanvas);
 
 var _actions = require('./actions');
 
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var GAMESTATUS_INPROGRESS = 1;
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     return Object.assign({}, state, {
@@ -362,7 +434,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
         tokenSpacing: 10,
         rows: state.parameters.rows,
         cols: state.parameters.cols,
-        isPlayerTurn: state.parameters.currentPlayer === 0
+        isPlayerTurn: state.parameters.currentPlayer === 0,
+        gameInProgress: state.parameters.status === GAMESTATUS_INPROGRESS
     });
 };
 
@@ -372,8 +445,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
             dispatch((0, _actions.selectToken)(coordinates));
         },
 
-        onTokenReleased: function onTokenReleased(coordinates) {
-            dispatch((0, _actions.releaseToken)(coordinates));
+        onTokenMoved: function onTokenMoved(gameid, playerid, from, to) {
+            dispatch((0, _actions.moveToken)(gameid, playerid, from, to));
         },
 
         onSelectionCleared: function onSelectionCleared() {
@@ -426,10 +499,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var socket = (0, _socket2.default)('http://localhost:3000');
 var socketIoMiddleware = (0, _reduxSocket2.default)(socket, 'server/');
 var store = (0, _redux.applyMiddleware)(socketIoMiddleware)(_redux.createStore)(_reducers2.default);
-var gameid = (0, _utility.parseGameIdFromUrl)(document);
-var cookies = (0, _utility.parseCookies)(document);
+var gameprops = (0, _utility.parseGameProps)(document);
 
-store.dispatch((0, _actions.initializeBoard)(gameid || cookies.gameid, cookies.playerid));
+store.dispatch((0, _actions.initializeBoard)(gameprops.gameid, gameprops.playerid));
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,
@@ -447,11 +519,20 @@ exports.default = rpsApp;
 
 var _actions = require('./actions');
 
+var _utility = require('./utility');
+
+var gameprops = (0, _utility.parseGameProps)(document);
+
 //import initialState from './dummy-data';
 var initialState = {
+    gameid: gameprops.gameid,
+    playerid: gameprops.playerid,
+    selected: null,
+    available: [],
     parameters: {
         rows: 1,
-        cols: 1
+        cols: 1,
+        status: 1
     },
     currentPlayer: {
         player: {},
@@ -464,19 +545,14 @@ var initialState = {
 };
 
 function handleSelectToken(state, coordinates) {
-    console.log('handleSelectedToken: ' + coordinates.x + ':' + coordinates.y);
     var selectedToken = state.currentPlayer.tokens.filter(function (t) {
         return t.x === coordinates.x && t.y === coordinates.y;
     });
-    console.log(selectedToken);
+
     return Object.assign({}, state, {
         selected: selectedToken.length ? { x: coordinates.x, y: coordinates.y } : null,
         available: selectedToken.length ? selectedToken[0].availableMoves : []
     });
-}
-
-function handleReleaseToken(state, coordinates) {
-    return Object.assign({}, state);
 }
 
 function handleClearSelection(state) {
@@ -486,11 +562,12 @@ function handleClearSelection(state) {
     });
 }
 
-function handleClientInitialize(state, game) {
-    console.log(game);
-    game.selected = null;
-    game.available = [];
-    return Object.assign({}, state, game);
+function handleClientUpdateBoard(state, game) {
+    var gameState = Object.assign({}, game, {
+        selected: null,
+        available: []
+    });
+    return Object.assign({}, state, gameState);
 }
 
 function rpsApp(state, action) {
@@ -499,30 +576,27 @@ function rpsApp(state, action) {
     }
 
     switch (action.type) {
-        case _actions.ActionTypes.SELECT_TOKEN:
+        case _actions.ActionTypes.UI_SELECT_TOKEN:
             return handleSelectToken(state, action.coordinates);
 
-        case _actions.ActionTypes.RELEASE_TOKEN:
-            return handleReleaseToken(state, action.coordinates);
-
-        case _actions.ActionTypes.CLEAR_SELECTION:
+        case _actions.ActionTypes.UI_CLEAR_SELECTION:
             return handleClearSelection(state);
 
-        case _actions.ActionTypes.CLIENT_INITIALIZE:
-            return handleClientInitialize(state, action.data);
+        case _actions.ActionTypes.CLIENT_UPDATE_BOARD:
+            return handleClientUpdateBoard(state, action.data);
 
         default:
             return state;
     }
 }
 
-},{"./actions":2}],7:[function(require,module,exports){
+},{"./actions":2,"./utility":7}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.parseGameIdFromUrl = parseGameIdFromUrl;
+exports.parseGameProps = parseGameProps;
 exports.parseCookies = parseCookies;
 function parseGameIdFromUrl(document) {
     if (document && document.location && document.location.pathname) {
@@ -536,6 +610,16 @@ function parseGameIdFromUrl(document) {
     }
 
     return "";
+}
+
+function parseGameProps(document) {
+    var gameid = parseGameIdFromUrl(document);
+    var cookies = parseCookies(document);
+
+    return {
+        gameid: gameid || cookies.gameid,
+        playerid: cookies.playerid
+    };
 }
 
 function parseCookies(document) {

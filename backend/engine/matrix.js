@@ -34,6 +34,14 @@ function createMatrix(rows, cols, elements) {
             return matrix[key];
         },
 
+        move: function(x, y, newX, newY) {
+            const oldItem = this.get(x, y);
+            const newItem = matrixElement.create(newX, newY, oldItem.value);
+            delete matrix[oldItem.key()];
+            matrix[newItem.key()] = newItem;
+            return this;
+        },
+
         without: function(item) {
             const key = item.key();
             delete matrix[key];
