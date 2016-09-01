@@ -15,20 +15,21 @@ const jsoutput = "./public/app.js";
 const cssroot = './frontend/css/*.css';
 
 function initBrowserify(watch) {
-    let options = {
-        entries: [jsroot],
-        cache: {},
-        packageCache: {}
-    };
-
     if (watch) {
-        options.plugin = [watchify];
-    }
-
-    b = browserify(options);
-
-    if (watch) {
+        b = browserify({
+                entries: [jsroot],
+                cache: {},
+                packageCache: {},
+                plugin: [watchify]
+            });
         b.on('update', bundleJs);
+    }
+    else {
+        b = browserify({
+                entries: [jsroot],
+                cache: {},
+                packageCache: {}
+            });
     }
 
     b.on('log', function(data) {
