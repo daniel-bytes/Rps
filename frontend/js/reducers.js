@@ -1,22 +1,27 @@
 'use strict';
 
 import { ActionTypes } from './actions';
-
-const initialState = {};
+import initialState from './dummy-data';
+//const initialState = { };
 
 function handleSelectToken(state, coordinates) {
-    console.log('reducers: handleSelectToken');
-    return {};
+    const selectedToken = state.currentPlayer.tokens.filter(t => t.x === coordinates.x && t.y === coordinates.y);
+
+    return Object.assign({}, state, {
+        selected: selectedToken.length ? { x: coordinates.x, y: coordinates.y } : null,
+        available: selectedToken.length ? selectedToken[0].availableMoves : []
+    });
 }
 
 function handleReleaseToken(state, coordinates) {
-    console.log('reducers: handleReleaseToken');
-    return {};
+    return Object.assign({}, state);
 }
 
 function handleClearSelection(state) {
-    console.log('reducers: handleClearSelection');
-    return {};
+    return Object.assign({}, state, {
+        selected: null,
+        available: []
+    });
 }
 
 export default function rpsApp(state, action) {

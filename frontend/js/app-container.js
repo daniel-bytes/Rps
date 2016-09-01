@@ -3,15 +3,16 @@ import AppCanvas from './app-canvas'
 import { selectToken, releaseToken, clearSelection } from './actions';
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        rows: 8, 
-        cols: 8, 
+    return Object.assign({}, state, {
         width: 800,
         height: 800,
         tokenWidth: 50,
         tokenHeight: 50,
-        tokenSpacing: 10
-    };
+        tokenSpacing: 10,
+        rows: state.parameters.rows,
+        cols: state.parameters.cols,
+        isPlayerTurn: state.parameters.currentPlayer === 0
+    });
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

@@ -95,7 +95,12 @@ function createGame(parameters, playersWithTokens) {
         },
 
         validMovesFrom: function(from) {
-            return gameBoard.validMovesFrom(from.x, from.y);
+            return gameBoard.validMovesFrom(from.x, from.y).map(mv => {
+                return {
+                    x: from.x + mv.x,
+                    y: from.y + mv.y
+                }
+            });
         },
 
         move: function(from, to) {

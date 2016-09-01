@@ -17,6 +17,22 @@ export default class Token extends React.Component {
         }
     }
 
+    getBorderColor() {
+        if (this.props.selected || this.props.available) {
+            return "blue";
+        }
+
+        return "black";
+    }
+
+    getBackgroundColor() {
+        if (this.props.available) {
+            return "blue";
+        }
+
+        return "transparent";
+    }
+
     tokenSelected() {
         this.props.onTokenSelected(this.props.coordinates);
     }
@@ -37,6 +53,8 @@ export default class Token extends React.Component {
         const cursor = isUserToken ? "pointer" : "default";
         const onMouseDown = isUserToken ? this.tokenSelected.bind(this) : null;
         const onMouseUp = this.tokenReleased.bind(this);
+        const borderColor = this.getBorderColor();
+        const backgroundColor = this.getBackgroundColor();
 
         return (
         <g>
@@ -49,13 +67,13 @@ export default class Token extends React.Component {
                 cursor={cursor}
                 onMouseDown={onMouseDown}
                 onMouseUp={onMouseUp}
-                stroke="black" 
-                fill="transparent" />
+                stroke={borderColor} 
+                fill={backgroundColor} />
             <text 
                 id={textid}
                 x={textX}
                 y={textY}
-                style={{ fontSize: textSize }}
+                style={{ fontSize: textSize, color: borderColor }}
                 cursor={cursor}
                 onMouseDown={onMouseDown}
                 onMouseUp={onMouseUp}

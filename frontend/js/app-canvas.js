@@ -5,11 +5,15 @@ import Token from './Token'
 
 export default class AppCanvas extends React.Component {
     tokenSelected(coordinates) {
-        this.props.onTokenSelected(coordinates);
+        if (this.props.isPlayerTurn) {
+            this.props.onTokenSelected(coordinates);
+        }
     }
 
     tokenReleased(coordinates) {
-        this.props.onTokenReleased(coordinates);
+        if (this.props.isPlayerTurn) {
+            this.props.onTokenReleased(coordinates);
+        }
     }
 
     windowMouseUp() {
@@ -24,6 +28,16 @@ export default class AppCanvas extends React.Component {
         window.removeEventListener('mouseup', this.windowMouseUp);
     }
 
+    getToken(x, y) {
+        let results = this.props.currentPlayer.tokens.filter(t => t.x === x && t.y === y);
+
+        if (!results.length) {
+            results = this.props.otherPlayer.tokens.filter(t => t.x === x && t.y === y);
+        }
+
+        return results.length ? results[0] : null;
+    }
+
     getCoordinates(rows, cols) {
         const coordinates = [];
 
@@ -34,6 +48,22 @@ export default class AppCanvas extends React.Component {
         }
 
         return coordinates;
+    }
+
+    isSelected(x, y) {
+        if (this.props.selected) {
+            return x === this.props.selected.x && y === this.props.selected.y; 
+        }
+
+        return false;
+    }
+
+    isAvailable(x, y) {
+        if (this.props.available) {
+            return this.props.available.some(t => x === t.x && y === t.y);
+        } 
+
+        return false;
     }
 
     render() {
@@ -47,7 +77,10 @@ export default class AppCanvas extends React.Component {
             const key = `${c.x}:${c.y}`;
             const x = spacing + (c.x * (width + spacing));
             const y = spacing + (c.y * (height + spacing));
-            const tokenType = Math.random() < .5 ? null : parseInt(Math.floor(Math.random() * 6));
+            const token = this.getToken(c.x, c.y);
+            const tokenType = token ? token.type : null;
+            const selected = this.isSelected(c.x, c.y);
+            const available = this.isAvailable(c.x, c.y);
 
             return (
                 <Token 
@@ -58,6 +91,8 @@ export default class AppCanvas extends React.Component {
                     width={width} 
                     height={height} 
                     tokenType={tokenType} 
+                    selected={selected}
+                    available={available}
                     onTokenSelected={this.tokenSelected.bind(this)}
                     onTokenReleased={this.tokenReleased.bind(this)} />
             );
