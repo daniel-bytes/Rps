@@ -51,7 +51,8 @@ function transformToUiRepresentation(gameObj, playerObj) {
 
     // for other player, hide token types
     result.otherPlayer.tokens = result.otherPlayer.tokens.map(t => ({ x: t.x, y: t.y, type: tokenTypes.unknown}));
-
+    
+    //console.log(JSON.stringify(result, null, 2));
     return result;
 }
 

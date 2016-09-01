@@ -18,8 +18,9 @@ const initialState = {
 };
 
 function handleSelectToken(state, coordinates) {
+    console.log(`handleSelectedToken: ${coordinates.x}:${coordinates.y}`);
     const selectedToken = state.currentPlayer.tokens.filter(t => t.x === coordinates.x && t.y === coordinates.y);
-
+    console.log(selectedToken);
     return Object.assign({}, state, {
         selected: selectedToken.length ? { x: coordinates.x, y: coordinates.y } : null,
         available: selectedToken.length ? selectedToken[0].availableMoves : []
@@ -38,6 +39,7 @@ function handleClearSelection(state) {
 }
 
 function handleClientInitialize(state, game) {
+    console.log(game);
     game.selected = null;
     game.available = [];
     return Object.assign({}, state, game);

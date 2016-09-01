@@ -349,7 +349,9 @@ var _appCanvas2 = _interopRequireDefault(_appCanvas);
 
 var _actions = require('./actions');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     return Object.assign({}, state, {
@@ -367,17 +369,14 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     return {
         onTokenSelected: function onTokenSelected(coordinates) {
-            console.log('mapDispatchToProps.onTokenSelected(' + JSON.stringify(coordinates) + ')');
             dispatch((0, _actions.selectToken)(coordinates));
         },
 
         onTokenReleased: function onTokenReleased(coordinates) {
-            console.log('mapDispatchToProps.onTokenReleased(' + JSON.stringify(coordinates) + ')');
             dispatch((0, _actions.releaseToken)(coordinates));
         },
 
         onSelectionCleared: function onSelectionCleared() {
-            console.log('mapDispatchToProps.onSelectionCleared()');
             dispatch((0, _actions.clearSelection)());
         }
     };
@@ -465,10 +464,11 @@ var initialState = {
 };
 
 function handleSelectToken(state, coordinates) {
+    console.log('handleSelectedToken: ' + coordinates.x + ':' + coordinates.y);
     var selectedToken = state.currentPlayer.tokens.filter(function (t) {
         return t.x === coordinates.x && t.y === coordinates.y;
     });
-
+    console.log(selectedToken);
     return Object.assign({}, state, {
         selected: selectedToken.length ? { x: coordinates.x, y: coordinates.y } : null,
         available: selectedToken.length ? selectedToken[0].availableMoves : []
@@ -487,6 +487,7 @@ function handleClearSelection(state) {
 }
 
 function handleClientInitialize(state, game) {
+    console.log(game);
     game.selected = null;
     game.available = [];
     return Object.assign({}, state, game);

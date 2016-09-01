@@ -35,10 +35,10 @@ function createBoard(rows, cols, tokens) {
             
             const player = token.player();
 
-            const allMoves = [  { x: x - 1, y: y },    // left
-                                { x: 1, y: y - 1 },    // top
-                                { x: x + 1, y: y },    // right
-                                { x: x, y: y + 1 }  ]; // bottom
+            const allMoves = [  { x: x - 1, y: y },        // left
+                                { x: x,     y: y - 1 },    // top
+                                { x: x + 1, y: y },        // right
+                                { x: x,     y: y + 1 }  ]; // bottom
             
             var validMoves = allMoves.filter(pt => {
                 const x1 = pt.x;
@@ -63,7 +63,7 @@ function createBoard(rows, cols, tokens) {
                 
                 return true;
             });
-
+            
             return validMoves;
         }
     }

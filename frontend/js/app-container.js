@@ -18,17 +18,14 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onTokenSelected: (coordinates) => {
-            console.log(`mapDispatchToProps.onTokenSelected(${JSON.stringify(coordinates)})`);
             dispatch(selectToken(coordinates));
         },
 
         onTokenReleased: (coordinates) => {
-            console.log(`mapDispatchToProps.onTokenReleased(${JSON.stringify(coordinates)})`);
             dispatch(releaseToken(coordinates));
         },
 
         onSelectionCleared: () => {
-            console.log('mapDispatchToProps.onSelectionCleared()');
             dispatch(clearSelection());
         }
     }

@@ -31,17 +31,4 @@ router.get('/play/:id', function(req, res, next) {
 	})
 });
 
-router.get('/api/game/:id', function(req, res, next) {
-	const playerid = req.query.playerid || req.cookies.playerid;
-
-	gameService.fetch(req.params.id, playerid).then(result => {
-		if (req.query.pretty) {
-			res.setHeader('Content-Type', 'application/json');
-			return res.send(JSON.stringify(result, null, 3));
-		}
-
-		return res.json(result);
-	})
-});
-
 module.exports = router;
