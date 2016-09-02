@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react'
-import Token from './Token'
+import Token from './token'
 
 export default class AppCanvas extends React.Component {
     tokenSelected(coordinates) {
