@@ -4,10 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./node_modules/gulp/bin/gulp.js && node ./backend/app.js",
+    "start": "node ./backend/app.js",
+    "build": "gulp",
     "test": "jasmine",
     "nodemon": "node ./node_modules/nodemon/bin/nodemon.js --watch backend  ./backend/app.js",
-    "buildjs": "browserify --entry frontend/app.js --outfile public/app.js"
+    "postinstall": "npm run build"
   },
   "author": "Daniel Battaglia",
   "license": "ISC",
