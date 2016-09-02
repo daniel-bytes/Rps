@@ -42,477 +42,11 @@ var clearSelection = exports.clearSelection = function clearSelection() {
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _typeof77 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _typeof76 = typeof Symbol === "function" && _typeof77(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof77(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof77(obj);
-};
-
-var _typeof75 = typeof Symbol === "function" && _typeof76(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof76(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof76(obj);
-};
-
-var _typeof74 = typeof Symbol === "function" && _typeof75(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof75(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof75(obj);
-};
-
-var _typeof73 = typeof Symbol === "function" && _typeof74(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof74(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof74(obj);
-};
-
-var _typeof72 = typeof Symbol === "function" && _typeof73(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof73(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof73(obj);
-};
-
-var _typeof71 = typeof Symbol === "function" && _typeof72(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof72(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof72(obj);
-};
-
-var _typeof70 = typeof Symbol === "function" && _typeof71(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof71(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof71(obj);
-};
-
-var _typeof69 = typeof Symbol === "function" && _typeof70(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof70(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof70(obj);
-};
-
-var _typeof68 = typeof Symbol === "function" && _typeof69(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof69(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof69(obj);
-};
-
-var _typeof67 = typeof Symbol === "function" && _typeof68(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof68(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof68(obj);
-};
-
-var _typeof66 = typeof Symbol === "function" && _typeof67(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof67(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof67(obj);
-};
-
-var _typeof65 = typeof Symbol === "function" && _typeof66(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof66(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof66(obj);
-};
-
-var _typeof64 = typeof Symbol === "function" && _typeof65(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof65(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof65(obj);
-};
-
-var _typeof63 = typeof Symbol === "function" && _typeof64(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof64(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof64(obj);
-};
-
-var _typeof62 = typeof Symbol === "function" && _typeof63(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof63(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof63(obj);
-};
-
-var _typeof61 = typeof Symbol === "function" && _typeof62(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof62(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof62(obj);
-};
-
-var _typeof60 = typeof Symbol === "function" && _typeof61(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof61(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof61(obj);
-};
-
-var _typeof59 = typeof Symbol === "function" && _typeof60(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof60(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof60(obj);
-};
-
-var _typeof58 = typeof Symbol === "function" && _typeof59(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof59(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof59(obj);
-};
-
-var _typeof57 = typeof Symbol === "function" && _typeof58(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof58(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof58(obj);
-};
-
-var _typeof56 = typeof Symbol === "function" && _typeof57(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof57(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof57(obj);
-};
-
-var _typeof55 = typeof Symbol === "function" && _typeof56(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof56(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof56(obj);
-};
-
-var _typeof54 = typeof Symbol === "function" && _typeof55(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof55(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof55(obj);
-};
-
-var _typeof53 = typeof Symbol === "function" && _typeof54(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof54(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof54(obj);
-};
-
-var _typeof52 = typeof Symbol === "function" && _typeof53(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof53(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof53(obj);
-};
-
-var _typeof51 = typeof Symbol === "function" && _typeof52(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof52(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof52(obj);
-};
-
-var _typeof50 = typeof Symbol === "function" && _typeof51(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof51(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof51(obj);
-};
-
-var _typeof49 = typeof Symbol === "function" && _typeof50(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof50(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof50(obj);
-};
-
-var _typeof48 = typeof Symbol === "function" && _typeof49(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof49(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof49(obj);
-};
-
-var _typeof47 = typeof Symbol === "function" && _typeof48(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof48(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof48(obj);
-};
-
-var _typeof46 = typeof Symbol === "function" && _typeof47(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof47(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof47(obj);
-};
-
-var _typeof45 = typeof Symbol === "function" && _typeof46(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof46(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof46(obj);
-};
-
-var _typeof44 = typeof Symbol === "function" && _typeof45(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof45(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof45(obj);
-};
-
-var _typeof43 = typeof Symbol === "function" && _typeof44(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof44(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof44(obj);
-};
-
-var _typeof42 = typeof Symbol === "function" && _typeof43(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof43(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof43(obj);
-};
-
-var _typeof41 = typeof Symbol === "function" && _typeof42(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof42(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof42(obj);
-};
-
-var _typeof40 = typeof Symbol === "function" && _typeof41(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof41(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof41(obj);
-};
-
-var _typeof39 = typeof Symbol === "function" && _typeof40(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof40(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof40(obj);
-};
-
-var _typeof38 = typeof Symbol === "function" && _typeof39(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof39(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof39(obj);
-};
-
-var _typeof37 = typeof Symbol === "function" && _typeof38(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof38(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof38(obj);
-};
-
-var _typeof36 = typeof Symbol === "function" && _typeof37(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof37(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof37(obj);
-};
-
-var _typeof35 = typeof Symbol === "function" && _typeof36(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof36(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof36(obj);
-};
-
-var _typeof34 = typeof Symbol === "function" && _typeof35(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof35(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof35(obj);
-};
-
-var _typeof33 = typeof Symbol === "function" && _typeof34(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof34(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof34(obj);
-};
-
-var _typeof32 = typeof Symbol === "function" && _typeof33(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof33(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof33(obj);
-};
-
-var _typeof31 = typeof Symbol === "function" && _typeof32(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof32(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof32(obj);
-};
-
-var _typeof30 = typeof Symbol === "function" && _typeof31(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof31(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof31(obj);
-};
-
-var _typeof29 = typeof Symbol === "function" && _typeof30(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof30(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof30(obj);
-};
-
-var _typeof28 = typeof Symbol === "function" && _typeof29(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof29(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof29(obj);
-};
-
-var _typeof27 = typeof Symbol === "function" && _typeof28(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof28(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof28(obj);
-};
-
-var _typeof26 = typeof Symbol === "function" && _typeof27(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof27(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof27(obj);
-};
-
-var _typeof25 = typeof Symbol === "function" && _typeof26(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof26(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof26(obj);
-};
-
-var _typeof24 = typeof Symbol === "function" && _typeof25(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof25(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof25(obj);
-};
-
-var _typeof23 = typeof Symbol === "function" && _typeof24(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof24(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof24(obj);
-};
-
-var _typeof22 = typeof Symbol === "function" && _typeof23(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof23(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof23(obj);
-};
-
-var _typeof21 = typeof Symbol === "function" && _typeof22(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof22(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof22(obj);
-};
-
-var _typeof20 = typeof Symbol === "function" && _typeof21(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof21(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof21(obj);
-};
-
-var _typeof19 = typeof Symbol === "function" && _typeof20(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof20(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof20(obj);
-};
-
-var _typeof18 = typeof Symbol === "function" && _typeof19(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof19(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof19(obj);
-};
-
-var _typeof17 = typeof Symbol === "function" && _typeof18(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof18(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof18(obj);
-};
-
-var _typeof16 = typeof Symbol === "function" && _typeof17(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof17(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof17(obj);
-};
-
-var _typeof15 = typeof Symbol === "function" && _typeof16(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof16(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof16(obj);
-};
-
-var _typeof14 = typeof Symbol === "function" && _typeof15(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof15(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof15(obj);
-};
-
-var _typeof13 = typeof Symbol === "function" && _typeof14(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof14(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof14(obj);
-};
-
-var _typeof12 = typeof Symbol === "function" && _typeof13(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof13(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof13(obj);
-};
-
-var _typeof11 = typeof Symbol === "function" && _typeof12(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof12(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof12(obj);
-};
-
-var _typeof10 = typeof Symbol === "function" && _typeof11(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof11(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof11(obj);
-};
-
-var _typeof9 = typeof Symbol === "function" && _typeof10(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof10(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof10(obj);
-};
-
-var _typeof8 = typeof Symbol === "function" && _typeof9(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof9(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof9(obj);
-};
-
-var _typeof7 = typeof Symbol === "function" && _typeof8(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof8(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof8(obj);
-};
-
-var _typeof6 = typeof Symbol === "function" && _typeof7(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof7(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof7(obj);
-};
-
-var _typeof5 = typeof Symbol === "function" && _typeof6(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof6(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof6(obj);
-};
-
-var _typeof4 = typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof5(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof5(obj);
-};
-
-var _typeof3 = typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof4(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof4(obj);
-};
-
-var _typeof2 = typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof3(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof3(obj);
-};
-
-var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-};
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-    };
-}();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -522,27 +56,13 @@ var _token = require('./token');
 
 var _token2 = _interopRequireDefault(_token);
 
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) {
-    if (!self) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var AppCanvas = function (_React$Component) {
     _inherits(AppCanvas, _React$Component);
@@ -668,9 +188,13 @@ var AppCanvas = function (_React$Component) {
                     onTokenReleased: _this2.tokenReleased.bind(_this2) });
             });
 
-            return _react2.default.createElement('svg', { id: 'canvas',
-                width: this.props.width,
-                height: this.props.height }, tokens);
+            return _react2.default.createElement(
+                'svg',
+                { id: 'canvas',
+                    width: this.props.width,
+                    height: this.props.height },
+                tokens
+            );
         }
     }]);
 
@@ -768,18 +292,20 @@ var _socket = require('socket.io-client');
 
 var _socket2 = _interopRequireDefault(_socket);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var socket = (0, _socket2.default)('http://localhost:3000', { forceNew: true });
+var socket = (0, _socket2.default)(null, { forceNew: true });
 var socketIoMiddleware = (0, _reduxSocket2.default)(socket, 'server/');
 var store = (0, _redux.applyMiddleware)(socketIoMiddleware)(_redux.createStore)(_reducers2.default);
 var gameprops = (0, _utility.parseGameProps)(document);
 
 store.dispatch((0, _actions.initializeBoard)(gameprops.gameid, gameprops.playerid));
 
-_reactDom2.default.render(_react2.default.createElement(_reactRedux.Provider, { store: store }, _react2.default.createElement(_appContainer2.default, null)), document.getElementById('content'));
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRedux.Provider,
+  { store: store },
+  _react2.default.createElement(_appContainer2.default, null)
+), document.getElementById('content'));
 
 },{"./actions":1,"./app-container":3,"./reducers":5,"./utility":7,"react":225,"react-dom":75,"react-redux":78,"redux":232,"redux-socket.io":226,"socket.io-client":234}],5:[function(require,module,exports){
 'use strict';
@@ -867,503 +393,23 @@ function rpsApp(state, action) {
 
 'use strict';
 
-var _typeof77 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-var _typeof76 = typeof Symbol === "function" && _typeof77(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof77(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof77(obj);
-};
-
-var _typeof75 = typeof Symbol === "function" && _typeof76(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof76(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof76(obj);
-};
-
-var _typeof74 = typeof Symbol === "function" && _typeof75(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof75(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof75(obj);
-};
-
-var _typeof73 = typeof Symbol === "function" && _typeof74(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof74(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof74(obj);
-};
-
-var _typeof72 = typeof Symbol === "function" && _typeof73(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof73(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof73(obj);
-};
-
-var _typeof71 = typeof Symbol === "function" && _typeof72(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof72(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof72(obj);
-};
-
-var _typeof70 = typeof Symbol === "function" && _typeof71(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof71(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof71(obj);
-};
-
-var _typeof69 = typeof Symbol === "function" && _typeof70(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof70(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof70(obj);
-};
-
-var _typeof68 = typeof Symbol === "function" && _typeof69(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof69(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof69(obj);
-};
-
-var _typeof67 = typeof Symbol === "function" && _typeof68(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof68(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof68(obj);
-};
-
-var _typeof66 = typeof Symbol === "function" && _typeof67(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof67(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof67(obj);
-};
-
-var _typeof65 = typeof Symbol === "function" && _typeof66(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof66(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof66(obj);
-};
-
-var _typeof64 = typeof Symbol === "function" && _typeof65(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof65(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof65(obj);
-};
-
-var _typeof63 = typeof Symbol === "function" && _typeof64(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof64(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof64(obj);
-};
-
-var _typeof62 = typeof Symbol === "function" && _typeof63(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof63(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof63(obj);
-};
-
-var _typeof61 = typeof Symbol === "function" && _typeof62(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof62(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof62(obj);
-};
-
-var _typeof60 = typeof Symbol === "function" && _typeof61(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof61(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof61(obj);
-};
-
-var _typeof59 = typeof Symbol === "function" && _typeof60(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof60(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof60(obj);
-};
-
-var _typeof58 = typeof Symbol === "function" && _typeof59(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof59(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof59(obj);
-};
-
-var _typeof57 = typeof Symbol === "function" && _typeof58(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof58(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof58(obj);
-};
-
-var _typeof56 = typeof Symbol === "function" && _typeof57(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof57(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof57(obj);
-};
-
-var _typeof55 = typeof Symbol === "function" && _typeof56(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof56(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof56(obj);
-};
-
-var _typeof54 = typeof Symbol === "function" && _typeof55(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof55(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof55(obj);
-};
-
-var _typeof53 = typeof Symbol === "function" && _typeof54(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof54(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof54(obj);
-};
-
-var _typeof52 = typeof Symbol === "function" && _typeof53(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof53(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof53(obj);
-};
-
-var _typeof51 = typeof Symbol === "function" && _typeof52(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof52(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof52(obj);
-};
-
-var _typeof50 = typeof Symbol === "function" && _typeof51(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof51(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof51(obj);
-};
-
-var _typeof49 = typeof Symbol === "function" && _typeof50(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof50(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof50(obj);
-};
-
-var _typeof48 = typeof Symbol === "function" && _typeof49(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof49(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof49(obj);
-};
-
-var _typeof47 = typeof Symbol === "function" && _typeof48(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof48(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof48(obj);
-};
-
-var _typeof46 = typeof Symbol === "function" && _typeof47(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof47(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof47(obj);
-};
-
-var _typeof45 = typeof Symbol === "function" && _typeof46(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof46(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof46(obj);
-};
-
-var _typeof44 = typeof Symbol === "function" && _typeof45(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof45(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof45(obj);
-};
-
-var _typeof43 = typeof Symbol === "function" && _typeof44(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof44(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof44(obj);
-};
-
-var _typeof42 = typeof Symbol === "function" && _typeof43(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof43(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof43(obj);
-};
-
-var _typeof41 = typeof Symbol === "function" && _typeof42(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof42(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof42(obj);
-};
-
-var _typeof40 = typeof Symbol === "function" && _typeof41(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof41(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof41(obj);
-};
-
-var _typeof39 = typeof Symbol === "function" && _typeof40(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof40(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof40(obj);
-};
-
-var _typeof38 = typeof Symbol === "function" && _typeof39(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof39(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof39(obj);
-};
-
-var _typeof37 = typeof Symbol === "function" && _typeof38(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof38(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof38(obj);
-};
-
-var _typeof36 = typeof Symbol === "function" && _typeof37(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof37(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof37(obj);
-};
-
-var _typeof35 = typeof Symbol === "function" && _typeof36(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof36(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof36(obj);
-};
-
-var _typeof34 = typeof Symbol === "function" && _typeof35(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof35(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof35(obj);
-};
-
-var _typeof33 = typeof Symbol === "function" && _typeof34(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof34(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof34(obj);
-};
-
-var _typeof32 = typeof Symbol === "function" && _typeof33(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof33(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof33(obj);
-};
-
-var _typeof31 = typeof Symbol === "function" && _typeof32(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof32(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof32(obj);
-};
-
-var _typeof30 = typeof Symbol === "function" && _typeof31(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof31(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof31(obj);
-};
-
-var _typeof29 = typeof Symbol === "function" && _typeof30(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof30(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof30(obj);
-};
-
-var _typeof28 = typeof Symbol === "function" && _typeof29(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof29(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof29(obj);
-};
-
-var _typeof27 = typeof Symbol === "function" && _typeof28(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof28(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof28(obj);
-};
-
-var _typeof26 = typeof Symbol === "function" && _typeof27(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof27(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof27(obj);
-};
-
-var _typeof25 = typeof Symbol === "function" && _typeof26(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof26(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof26(obj);
-};
-
-var _typeof24 = typeof Symbol === "function" && _typeof25(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof25(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof25(obj);
-};
-
-var _typeof23 = typeof Symbol === "function" && _typeof24(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof24(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof24(obj);
-};
-
-var _typeof22 = typeof Symbol === "function" && _typeof23(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof23(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof23(obj);
-};
-
-var _typeof21 = typeof Symbol === "function" && _typeof22(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof22(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof22(obj);
-};
-
-var _typeof20 = typeof Symbol === "function" && _typeof21(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof21(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof21(obj);
-};
-
-var _typeof19 = typeof Symbol === "function" && _typeof20(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof20(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof20(obj);
-};
-
-var _typeof18 = typeof Symbol === "function" && _typeof19(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof19(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof19(obj);
-};
-
-var _typeof17 = typeof Symbol === "function" && _typeof18(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof18(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof18(obj);
-};
-
-var _typeof16 = typeof Symbol === "function" && _typeof17(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof17(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof17(obj);
-};
-
-var _typeof15 = typeof Symbol === "function" && _typeof16(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof16(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof16(obj);
-};
-
-var _typeof14 = typeof Symbol === "function" && _typeof15(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof15(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof15(obj);
-};
-
-var _typeof13 = typeof Symbol === "function" && _typeof14(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof14(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof14(obj);
-};
-
-var _typeof12 = typeof Symbol === "function" && _typeof13(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof13(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof13(obj);
-};
-
-var _typeof11 = typeof Symbol === "function" && _typeof12(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof12(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof12(obj);
-};
-
-var _typeof10 = typeof Symbol === "function" && _typeof11(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof11(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof11(obj);
-};
-
-var _typeof9 = typeof Symbol === "function" && _typeof10(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof10(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof10(obj);
-};
-
-var _typeof8 = typeof Symbol === "function" && _typeof9(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof9(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof9(obj);
-};
-
-var _typeof7 = typeof Symbol === "function" && _typeof8(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof8(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof8(obj);
-};
-
-var _typeof6 = typeof Symbol === "function" && _typeof7(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof7(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof7(obj);
-};
-
-var _typeof5 = typeof Symbol === "function" && _typeof6(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof6(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof6(obj);
-};
-
-var _typeof4 = typeof Symbol === "function" && _typeof5(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof5(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof5(obj);
-};
-
-var _typeof3 = typeof Symbol === "function" && _typeof4(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof4(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof4(obj);
-};
-
-var _typeof2 = typeof Symbol === "function" && _typeof3(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof3(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof3(obj);
-};
-
-var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
-};
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-    };
-}();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) {
-    if (!self) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }return call && ((typeof call === 'undefined' ? 'undefined' : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
-    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Token = function (_React$Component) {
     _inherits(Token, _React$Component);
@@ -1439,25 +485,34 @@ var Token = function (_React$Component) {
             var borderColor = this.getBorderColor();
             var backgroundColor = this.getBackgroundColor();
 
-            return _react2.default.createElement('g', null, _react2.default.createElement('rect', {
-                id: rectid,
-                x: this.props.x,
-                y: this.props.y,
-                width: this.props.width,
-                height: this.props.height,
-                cursor: cursor,
-                onMouseDown: onMouseDown,
-                onMouseUp: onMouseUp,
-                stroke: borderColor,
-                fill: backgroundColor }), _react2.default.createElement('text', {
-                id: textid,
-                x: textX,
-                y: textY,
-                style: { fontSize: textSize, color: borderColor },
-                cursor: cursor,
-                onMouseDown: onMouseDown,
-                onMouseUp: onMouseUp,
-                textAnchor: 'start' }, text));
+            return _react2.default.createElement(
+                'g',
+                null,
+                _react2.default.createElement('rect', {
+                    id: rectid,
+                    x: this.props.x,
+                    y: this.props.y,
+                    width: this.props.width,
+                    height: this.props.height,
+                    cursor: cursor,
+                    onMouseDown: onMouseDown,
+                    onMouseUp: onMouseUp,
+                    stroke: borderColor,
+                    fill: backgroundColor }),
+                _react2.default.createElement(
+                    'text',
+                    {
+                        id: textid,
+                        x: textX,
+                        y: textY,
+                        style: { fontSize: textSize, color: borderColor },
+                        cursor: cursor,
+                        onMouseDown: onMouseDown,
+                        onMouseUp: onMouseUp,
+                        textAnchor: 'start' },
+                    text
+                )
+            );
         }
     }]);
 

@@ -12,7 +12,7 @@ import createSocketIoMiddleware from 'redux-socket.io'
 import io from 'socket.io-client';
 
 
-let socket = io('http://localhost:3000', { forceNew: true });
+let socket = io(null, { forceNew: true });
 let socketIoMiddleware = createSocketIoMiddleware(socket, 'server/'); 
 let store = applyMiddleware(socketIoMiddleware)(createStore)(reducer);
 let gameprops = parseGameProps(document);
