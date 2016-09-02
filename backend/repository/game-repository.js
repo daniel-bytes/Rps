@@ -4,7 +4,7 @@ const game = require('../engine/game');
 
 const Promise = require('bluebird');
 const redis = require('redis');
-const ttl = 60 * 60 * 24; // 1 day
+const ttl = 60 * 60; // 1 hour
 
 Promise.promisifyAll(redis.RedisClient.prototype);
 Promise.promisifyAll(redis.Multi.prototype);

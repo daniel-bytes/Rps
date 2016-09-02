@@ -494,20 +494,18 @@ var _socket = require('socket.io-client');
 
 var _socket2 = _interopRequireDefault(_socket);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
-var socket = (0, _socket2.default)('http://localhost:3000');
+var socket = (0, _socket2.default)('http://localhost:3000', { forceNew: true });
 var socketIoMiddleware = (0, _reduxSocket2.default)(socket, 'server/');
 var store = (0, _redux.applyMiddleware)(socketIoMiddleware)(_redux.createStore)(_reducers2.default);
 var gameprops = (0, _utility.parseGameProps)(document);
 
 store.dispatch((0, _actions.initializeBoard)(gameprops.gameid, gameprops.playerid));
 
-_reactDom2.default.render(_react2.default.createElement(
-  _reactRedux.Provider,
-  { store: store },
-  _react2.default.createElement(_appContainer2.default, null)
-), document.getElementById('content'));
+_reactDom2.default.render(_react2.default.createElement(_reactRedux.Provider, { store: store }, _react2.default.createElement(_appContainer2.default, null)), document.getElementById('content'));
 
 },{"./actions":2,"./app-container":4,"./reducers":6,"./utility":7,"react":225,"react-dom":75,"react-redux":78,"redux":232,"redux-socket.io":226,"socket.io-client":234}],6:[function(require,module,exports){
 'use strict';
