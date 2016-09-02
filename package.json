@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./backend/app.js",
+    "start": "node ./node_modules/gulp/bin/gulp.js && node ./backend/app.js",
     "test": "jasmine",
     "nodemon": "node ./node_modules/nodemon/bin/nodemon.js --watch backend  ./backend/app.js",
     "buildjs": "browserify --entry frontend/app.js --outfile public/app.js"

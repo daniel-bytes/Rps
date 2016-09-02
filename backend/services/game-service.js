@@ -9,7 +9,7 @@ const gameStatus = require('../engine/game-status');
 const idGenerator = require('../engine/id-generator');
 const config = require('../../package.json').config;
 
-const redisConfig = config['redis'];
+const redisConfig = process.env.REDISCLOUD_URL || config['redis'];
 const gameParams = config['game-parameters'];
 const repo = gameRepository(redisConfig);
 
