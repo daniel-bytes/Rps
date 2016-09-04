@@ -32,6 +32,7 @@ export class AppState {
             this._state.gameId = serverState.id;
             this._state.rows = serverState.parameters.rows;
             this._state.cols = serverState.parameters.cols;
+            this._state.gameState = serverState.parameters.
             this._state.tokens = [];
 
             if (serverState.currentPlayer) {
