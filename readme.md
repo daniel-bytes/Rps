@@ -1,5 +1,5 @@
 # Rock/Paper/Scissor
-rock paper scissor game written in js (node.js backend and Reacj.js frontend, with websockets)
+rock paper scissor game written in js (node.js backend and React.js frontend, with websockets)
 
 play at now at: http://rock-paper-scissor-battle.com/
 
